@@ -5,4 +5,10 @@ import { BaseEntity } from '../../core/base.entity';
 export class EmployeeEntity extends BaseEntity {
   @Column()
   name: string;
+
+  @Column()
+  age: number;
+
+  @Column()
+  jobTitle: string;
 }
