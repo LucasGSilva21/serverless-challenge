@@ -24,7 +24,7 @@ let typeOrmConfig: TypeOrmModuleOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
   logging: true,
-  synchronize: false,
+  synchronize: true,
   entities: commonConf.ENTITIES,
   migrations: commonConf.MIGRATIONS,
   cli: commonConf.CLI,
@@ -36,7 +36,6 @@ let typeOrmConfig: TypeOrmModuleOptions = {
 if (process.env.NODE_ENV === 'prod') {
   typeOrmConfig = {
     ...typeOrmConfig,
-    synchronize: false,
   };
 }
 
