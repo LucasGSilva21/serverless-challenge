@@ -1,7 +1,7 @@
 import { EmployeeEntity } from '../employee.entity';
 import { EmployeeDTO, CreateEmployeeDTO, UpdateEmployeeDTO } from '../dto';
 
-export class UserMapper {
+export class EmployeeMapper {
   static fromDTOtoEntity(entityDTO: CreateEmployeeDTO | UpdateEmployeeDTO): EmployeeEntity {
     if (!entityDTO) {
       return;
@@ -26,6 +26,8 @@ export class UserMapper {
     entityDTO.createdAt = entity.createdAt;
     entityDTO.updatedAt = entity.updatedAt;
     entityDTO.name = entity.name;
+    entityDTO.age = entity.age;
+    entityDTO.jobTitle = entity.jobTitle;
 
     return entityDTO;
   }

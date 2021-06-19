@@ -8,7 +8,6 @@ export async function setupSwagger(app: INestApplication): Promise<any> {
     .setTitle('Serverless Challenge API')
     .setDescription('Lutien API documentation')
     .setVersion('0.0.1')
-    .addBearerAuth()
     .setBasePath('/api/')
     .build();
   const document = SwaggerModule.createDocument(app, options);
