@@ -40,6 +40,13 @@ async function bootstrapServer(): Promise<Server> {
 }
 
 export const handler: Handler = async (event: any, context: Context) => {
+  if (event.path === '/api-docs') {
+    event.path = '/api-docs/';
+  }
+  event.path = event.path.includes('swagger-ui')
+    ? `/api-docs${event.path}`
+    : event.path;
+    
   cachedServer = await bootstrapServer();
 
   return proxy(cachedServer, event, context, 'PROMISE').promise;
