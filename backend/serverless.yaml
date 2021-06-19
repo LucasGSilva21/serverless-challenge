@@ -1,0 +1,36 @@
+service:
+ name: nest-serverless-challenge
+
+plugins:
+ - serverless-plugin-typescript
+ - serverless-plugin-optimize
+ - serverless-offline
+ - serverless-dotenv-plugin
+
+provider:
+ name: aws
+ runtime: nodejs12.x
+
+ apiGateway:
+    shouldStartNameWithService : true
+
+functions:
+ main: # The name of the lambda function
+   # The module 'handler' is exported in the file 'src/lambda'
+   handler: src/lambda.handler
+   events:
+     - http:
+         method: any
+         path: /{any+}
+
+custom:
+  dotenv:
+   
+    # default: does not exclude any env variables found in your dotenv file(s)
+    # does nothing if `include` is set
+    exclude:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_REGION
+      - AWS_DEFAULT_REGION
+      - AWS_SESSION_TOKEN
