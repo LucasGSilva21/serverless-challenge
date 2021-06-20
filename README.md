@@ -8,11 +8,11 @@ O objetivo desse projeto é provisionar uma infraestrutura na AWS, em que se ten
 
 É possível executar o backend de duas maneiras:
 
-1. Via link hospedado
+1. Via link hospedado [ **[API](https://uv90jfs8o2.execute-api.us-east-1.amazonaws.com/dev/api/v1/employees)** ]
 
 2. Executando localmente
 
-💡As instruções a seguir são para executar o backend localmente.
+OBS.: As instruções a seguir são para executar o backend localmente.
 
 ### Pré-requisitos
 
@@ -68,6 +68,22 @@ $ npm run start:dev
 ```
 
 ---
+## 💡 Endpoints
+
+A api possui os seguintes endpoints para o CRUD de funcionários:
+
+- **Listar todos**: GET - BASE_URL/employees
+- **Listar um**: GET - BASE_URL/employees/:id
+- **Criar**: POST - BASE_URL/employees
+- **Atualizar**: PUT - BASE_URL/employees/:id
+- **Deletar**: DELETE - BASE_URL/employees/:id
+
+OBS.: Substitua BASE_URL conforme o ambiente de execução
+
+- **Local**: http://localhost:3333/api/v1/
+- **Hospedagem AWS**:   https://uv90jfs8o2.execute-api.us-east-1.amazonaws.com/dev/api/v1/
+
+É possível consultar os endpoints localmente via Swagger acessando  http://localhost:3333/api/v1/api-docs. Eu não consegui configurar o swagger para executar no lambda.
 
 ## 🛠 Ferramentas
 
@@ -83,7 +99,15 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - **[PostgreSQL](https://www.postgresql.org/)**
 
+- **[SQLite](https://www.sqlite.org/index.html)**
+
 - **[TypeORM](https://typeorm.io/#/)**
+
+- **[Serverless](https://www.serverless.com/)**
+
+- **[Jest](https://jestjs.io/)**
+
+- **[Swagger](https://swagger.io/)**
 
 > Verifique o arquivo [package.json](https://github.com/LucasGSilva21/serverless-challenge/blob/main/backend/package.json)
 
