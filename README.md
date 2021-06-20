@@ -30,7 +30,7 @@ Para executar localmente, é necessário ter as seguintes ferramentas instaladas
 
 # clone o repositório
 
-$ git clone <https://github.com/LucasGSilva21/serverless-challenge.git>
+$ git clone https://github.com/LucasGSilva21/serverless-challenge.git
 
 # abra um terminal nesse repositório
 
